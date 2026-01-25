@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>トレンド芸能キャッチ｜芸能・エンタメまとめ</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="brand">
+        <span class="brand__mark">TRE</span>
+        <div>
+          <p class="brand__name">トレンド芸能キャッチ</p>
+          <p class="brand__tag">芸能界の話題・エンタメ・ゴシップをひとまとめ</p>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="#top-news">トップ</a>
+        <a href="#entertainment">エンタメ</a>
+        <a href="#gossip">ゴシップ</a>
+        <a href="#editorial">編集者AI</a>
+        <a href="#ranking">ランキング</a>
+      </nav>
+      <button class="cta">最新速報を受け取る</button>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div>
+          <p class="pill">本日の総合トレンド</p>
+          <h1 id="hero-title">芸能界の“今”が30秒でわかるダイジェスト</h1>
+          <p class="hero__lead">
+            速報系メディア、バラエティ、SNSの話題を独自キュレーション。
+            ニュースの温度感や盛り上がり度をまとめてチェックできます。
+          </p>
+          <div class="hero__actions">
+            <button class="primary">注目トピックを見る</button>
+            <button class="ghost">出演者スケジュールを確認</button>
+          </div>
+        </div>
+        <div class="hero__card" id="hero-card">
+          <p class="hero__card-title">今日の注目ワード</p>
+          <ul class="hero__taglist" id="trend-tags"></ul>
+          <div class="hero__meta">
+            <div>
+              <p class="meta__label">更新</p>
+              <p class="meta__value" id="last-updated">--</p>
+            </div>
+            <div>
+              <p class="meta__label">話題指数</p>
+              <p class="meta__value">92 / 100</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="top-news" aria-labelledby="top-news-title">
+        <div class="section__header">
+          <div>
+            <h2 id="top-news-title">トップニュース</h2>
+            <p>24時間以内で反響が大きかった記事をピックアップ。</p>
+          </div>
+          <div class="filter">
+            <button class="filter__btn filter__btn--active">総合</button>
+            <button class="filter__btn">速報</button>
+            <button class="filter__btn">特集</button>
+          </div>
+        </div>
+        <div class="card-grid" id="top-news-grid"></div>
+      </section>
+
+      <section class="section split" id="entertainment" aria-labelledby="entertainment-title">
+        <div>
+          <h2 id="entertainment-title">エンタメ特集</h2>
+          <p>映画・ドラマ・音楽・舞台のリリース情報を一括表示。</p>
+          <div class="mini-list" id="entertainment-list"></div>
+        </div>
+        <aside class="side-panel">
+          <h3>放送・配信の注目予定</h3>
+          <ul class="schedule">
+            <li>
+              <span class="schedule__time">今夜 21:00</span>
+              <span class="schedule__title">新ドラマ初回特番：制作舞台裏</span>
+            </li>
+            <li>
+              <span class="schedule__time">金曜 20:00</span>
+              <span class="schedule__title">人気バンドのライブ配信</span>
+            </li>
+            <li>
+              <span class="schedule__time">日曜 18:30</span>
+              <span class="schedule__title">話題の映画監督インタビュー</span>
+            </li>
+          </ul>
+          <button class="primary wide">予定表を保存</button>
+        </aside>
+      </section>
+
+      <section class="section" id="gossip" aria-labelledby="gossip-title">
+        <div class="section__header">
+          <div>
+            <h2 id="gossip-title">ゴシップ・噂の動向</h2>
+            <p>信頼度メーター付きで今ホットな話題を整理。</p>
+          </div>
+          <div class="legend">
+            <span><strong>高</strong>：複数ソース</span>
+            <span><strong>中</strong>：SNS中心</span>
+            <span><strong>低</strong>：噂レベル</span>
+          </div>
+        </div>
+        <div class="gossip-grid" id="gossip-grid"></div>
+      </section>
+
+      <section class="section editor" id="editorial" aria-labelledby="editorial-title">
+        <div class="section__header">
+          <div>
+            <h2 id="editorial-title">編集者AIプロンプト</h2>
+            <p>
+              気になるニュースが見つかったら、このテンプレートを使って特集記事を作成できます。
+            </p>
+          </div>
+          <button class="ghost" id="copy-prompt">プロンプトをコピー</button>
+        </div>
+        <div class="editor__panel">
+          <label class="editor__label" for="editor-prompt">記事作成プロンプト</label>
+          <textarea id="editor-prompt" class="editor__textarea" rows="18"></textarea>
+          <p class="editor__note" id="copy-status">コピーはまだ実行されていません。</p>
+        </div>
+      </section>
+
+      <section class="section" id="ranking" aria-labelledby="ranking-title">
+        <div class="section__header">
+          <div>
+            <h2 id="ranking-title">話題ランキング</h2>
+            <p>SNSとニュース露出から算出した注目度ランキング。</p>
+          </div>
+          <button class="ghost">ランキングを共有</button>
+        </div>
+        <ol class="ranking" id="ranking-list"></ol>
+      </section>
+
+      <section class="section newsletter" aria-labelledby="newsletter-title">
+        <div>
+          <h2 id="newsletter-title">速報まとめを朝と夜にお届け</h2>
+          <p>メールやLINEでトレンドを通知。ジャンルや推しをカスタマイズできます。</p>
+        </div>
+        <form class="newsletter__form">
+          <input type="email" placeholder="example@mail.com" aria-label="メールアドレス" />
+          <button class="primary" type="button">無料で登録</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <p class="brand__name">トレンド芸能キャッチ</p>
+        <p>芸能界の最新動向をまとめたキュレーションサイト</p>
+      </div>
+      <div class="footer-links">
+        <a href="#">編集方針</a>
+        <a href="#">広告について</a>
+        <a href="#">お問い合わせ</a>
+      </div>
+      <p class="copyright">© 2024 TREND GEINOU CATCH</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
