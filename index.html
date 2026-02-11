@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shorts Daily Digest</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div>
+        <p class="eyebrow">YouTube Shorts Trend Watch</p>
+        <h1>毎日の人気ショートまとめ</h1>
+        <p class="subtitle">
+          その日の人気ショートをジャンル別で一気に確認。日次で要点を短く読めるダイジェストです。
+        </p>
+      </div>
+      <button id="refreshBtn" class="refresh">今日のまとめを更新</button>
+    </header>
+
+    <main>
+      <section class="controls">
+        <label>
+          日付
+          <input id="dateInput" type="date" />
+        </label>
+        <label>
+          ジャンル
+          <select id="categoryFilter">
+            <option value="all">すべて</option>
+          </select>
+        </label>
+      </section>
+
+      <section id="summary" class="summary"></section>
+      <section id="cards" class="cards"></section>
+    </main>
+
+    <template id="cardTemplate">
+      <article class="card">
+        <div class="card-top">
+          <span class="rank"></span>
+          <span class="category"></span>
+        </div>
+        <h2 class="title"></h2>
+        <p class="meta"></p>
+        <p class="insight"></p>
+        <a class="watch" target="_blank" rel="noopener noreferrer">ショートを見る</a>
+      </article>
+    </template>
+
+    <script src="app.js" type="module"></script>
+  </body>
+</html>
